@@ -21,7 +21,7 @@ async function approvalNode(state: TypeState) {
 
 async function reviewOrApproveNode(state: TypeState) {
     let userFeedback = interrupt(
-        "Please check if this draft is good and select 'yes' or 'no' or 'edit'",
+        "Please check if this draft is good: " + state.firstDraft,
     );
     if (userFeedback == "true" || userFeedback == "false") {
         if (typeof userFeedback === "string") {
